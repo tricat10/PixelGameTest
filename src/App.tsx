@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Avatar } from './components/Avatar';
 
 type GameState = 'menu' | 'loading' | 'submitting' | 'game' | 'results';
