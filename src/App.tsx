@@ -61,8 +61,8 @@ export default function App() {
       setCurrentQuestionIndex(0);
       setAnswers([]);
       setGameState('game');
-    } catch (err: any) {
-      setErrorMsg(`FETCH ERROR: ${err.message}`);
+    } catch (err) {
+      setErrorMsg(`FETCH ERROR: ${err instanceof Error ? err.message : String(err)}`);
       setGameState('menu');
     }
   };
@@ -101,8 +101,8 @@ export default function App() {
          setIsPass(data.isPass);
          setGameState('results');
          
-      } catch (err: any) {
-         setErrorMsg(`SUBMIT ERROR: ${err.message}`);
+      } catch (err) {
+         setErrorMsg(`SUBMIT ERROR: ${err instanceof Error ? err.message : String(err)}`);
          setGameState('menu');
       }
     }
